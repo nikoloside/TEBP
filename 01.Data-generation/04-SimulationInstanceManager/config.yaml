@@ -1,0 +1,5 @@
+resourceGroup: fracture-group
+location: eastus2
+vms:
+  - spc01
+  - spc02

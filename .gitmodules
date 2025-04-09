@@ -1,0 +1,3 @@
+[submodule "01.Data-generation/04-SimulationInstanceManager/DockerFracture"]
+	path = 01.Data-generation/04-SimulationInstanceManager/DockerFracture
+	url = git@github.com:nikoloside/fracturerb-docker.git

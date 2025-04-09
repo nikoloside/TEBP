@@ -36,4 +36,11 @@ This Docker implementation allows you to run FractureRB simulations with Google 
 > docker pull nikoloside/fracturerb-ubuntu:shape-impulse-shapenet
 > 
 
+## How to use
 
+> brew install az
+
+> az login
+
+
+> brew install yq

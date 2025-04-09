@@ -1,0 +1,5 @@
+#cloud-config
+runcmd:
+  - curl -o /tmp/download.sh "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+  - chmod +x /tmp/download.sh
+  - /tmp/download.sh
