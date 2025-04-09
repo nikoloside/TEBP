@@ -30,3 +30,31 @@ We have a configuration file to save all the settings and parameters required fo
 3. Execute the script to generate the CSV config and Bullet files for the FractureRB Docker component.
 4. Build the pipeline to generate the Vutlr instance.
 5. Run the command to generate the Vutlr instance and process the FractureRB Docker component. Monitor the process on the dashboard and check the results saved in Google Drive.
+
+## WIP
+
+- [x] Bowl
+    - [x] Download
+    - [x] Simulation
+    - [x] Build-dataset
+    - [ ] Bowl & Vase
+    - [ ] Vase Download
+    - [ ] Vase Simulation
+    - [ ] Build-dataset
+- [ ] Animal
+    - [x] Download
+    - [ ] Simulation
+    - [ ] Build-dataset
+- [ ] Mug & Cup
+- [ ] Sheild
+- [ ] Plane
+- [ ] Table
+    - [ ] Download
+    - [ ] Simulation
+    - [ ] Build-dataset
+- [ ] Chair
+    - [ ] Download
+    - [ ] Simulation
+    - [ ] Build-dataset
+- [ ] Others
+    - [ ] Bottle

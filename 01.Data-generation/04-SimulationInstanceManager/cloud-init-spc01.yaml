@@ -1,5 +1,7 @@
 #cloud-config
 runcmd:
-  - curl -o /tmp/download.sh "https://drive.google.com/uc?export=download&id=1qy4D-FPUg6c_0Mf97uCdxDbkxskwjpWx"
-  - chmod +x /tmp/download.sh
-  - /tmp/download.sh
+  - cd /home/azureuser/
+  - wget --no-check-certificate "https://docs.google.com/uc?export=download&id=1mqwgEX_ZgOifRBLFllqw6cGFRXwUhwk8" -O /home/azureuser/download.tar.gz
+  - tar -xzvf /home/azureuser/download.tar.gz -C /home/azureuser/
+  - sudo chmod +x /home/azureuser/download.sh
+  - sudo /home/azureuser/download.sh

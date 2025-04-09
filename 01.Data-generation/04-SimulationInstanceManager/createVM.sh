@@ -5,9 +5,9 @@ VM_NAME=$1
 RESOURCE_GROUP="fracture-group"
 LOCATION="eastus"
 IMAGE="Ubuntu2404"
-SIZE="Standard_F16s_v2"
+SIZE="Standard_D4s_v3"
 ADMIN_USER="azureuser"
-SSH_KEY_PATH="$HOME/.ssh/id_rsa.pub"
+SSH_KEY_PATH="$HOME/.ssh/id_ed25519.pub"
 
 if ! command -v yq &> /dev/null; then
   echo "Please install yq：brew install yq"
@@ -17,15 +17,17 @@ RESOURCE_GROUP=$(yq '.resourceGroup' config.yaml)
 LOCATION=$(yq '.location' config.yaml)
 
 # Google Drive 上的 download.sh 的 file ID
-DOWNLOAD_ID="1qy4D-FPUg6c_0Mf97uCdxDbkxskwjpWx"
+DOWNLOAD_ID="1mqwgEX_ZgOifRBLFllqw6cGFRXwUhwk8"
 
 # 生成 cloud-init 临时配置（自动下载并执行 download.sh）
 cat > cloud-init-${VM_NAME}.yaml <<EOF
 #cloud-config
 runcmd:
-  - curl -o /tmp/download.sh "https://drive.google.com/uc?export=download&id=${DOWNLOAD_ID}"
-  - chmod +x /tmp/download.sh
-  - /tmp/download.sh
+  - cd /home/azureuser/
+  - wget --no-check-certificate "https://docs.google.com/uc?export=download&id=${DOWNLOAD_ID}" -O /home/azureuser/download.tar.gz
+  - tar -xzvf /home/azureuser/download.tar.gz -C /home/azureuser/
+  - sudo chmod +x /home/azureuser/download.sh
+  - sudo /home/azureuser/download.sh
 EOF
 
 # 创建资源组（如果尚未存在）
